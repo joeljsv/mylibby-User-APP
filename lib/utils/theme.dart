@@ -36,8 +36,8 @@ class AppTheme {
     headline2: GoogleFonts.secularOne(fontWeight: _bold,color:appColor.primary ),
     headline4: TextStyle(fontWeight: _bold, fontSize: 24, letterSpacing: 1.4),
     caption: TextStyle(fontWeight: _bold, fontSize: 16.0),
-    headline5: TextStyle(fontWeight: FontWeight.w500, fontSize: 16.0),
-    bodyText1: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
+    headline5: GoogleFonts.openSans(fontWeight: FontWeight.w500, fontSize: 16.0),
+    bodyText1: GoogleFonts.openSans(fontWeight: FontWeight.w500, fontSize: 15),
     bodyText2: TextStyle(
         fontWeight: FontWeight.w500,
         fontSize: 12,

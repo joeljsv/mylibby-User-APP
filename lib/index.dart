@@ -1,6 +1,8 @@
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:mylibby/screens/profile/profile.dart';
+import 'package:mylibby/screens/scan/scan.dart';
 import 'package:mylibby/utils/theme.dart';
 
 import 'screens/home/home.dart';
@@ -23,12 +25,18 @@ class Index extends StatefulWidget {
 
 class _IndexState extends State<Index> {
   int _currentIndex = 0;
-
+  final List<Widget> screen = [
+    HomeScreen(),
+    HomeScreen(
+      isOder: true,
+    ),
+    ProfileScreen()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar(),
-      body: HomeScreen(),
+      body: screen[_currentIndex],
       bottomNavigationBar: BottomNavyBar(
         selectedIndex: _currentIndex,
         showElevation: true,
@@ -56,8 +64,13 @@ class _IndexState extends State<Index> {
             ),
             textAlign: TextAlign.center,
           ),
-         
         ],
+      ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        isExtended: false,
+        child: Icon(Icons.add),
+        onPressed: ()=>Navigator.push(context, MaterialPageRoute(builder: (ctx)=>CodeScan())),
       ),
     );
   }
